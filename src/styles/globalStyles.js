@@ -9,5 +9,9 @@ export default createGlobalStyle`
         font-weight: 400;
         color: #0c1932;
     }
-    
+
+    body {
+        background-color: rgb(245, 247, 250);
+    }
+
 `
