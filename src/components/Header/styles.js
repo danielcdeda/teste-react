@@ -12,6 +12,7 @@ justify-content: space-between;
 p {
     color: #fff;
 }
+
 `
 
 export const Container = styled.div `
@@ -29,6 +30,10 @@ export const Container = styled.div `
             width: 12.5rem;
             height: 2.5rem;
             padding-left: 10px;
+            border: 2px solid #D0D3E0;
+            border-radius: 5px;
+            color: #0C1932;
         }
+        
 
 `
