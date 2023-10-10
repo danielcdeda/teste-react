@@ -1,9 +1,17 @@
+import { useRef } from 'react'
 import Icon from '../../assets/icon.svg'
 import { TopHeader } from './styles'
 import { Container } from './styles'
 
 
-function Header() {
+function Header({movies, setFilteredMovies}) {
+    const input = useRef()
+
+    function inputChange (){
+        const newMovies = movies.filter( movie => movie.name.includes(input.current.value))
+        setFilteredMovies(newMovies)
+        console.log(input.current.value)
+    }
 
     return (
         <>
@@ -18,7 +26,7 @@ function Header() {
                     <p>Ave. movie budget: $XXM</p>
             </div>
             <div>
-                    <input type="text" className='input' placeholder='Filter movies by name'/>
+                    <input type="text" className='input' placeholder='Filter movies by name' ref={input} onChange={inputChange}/>
             </div>
         </Container>
         </>

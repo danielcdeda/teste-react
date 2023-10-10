@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TopHeader = styled.div `
 background: #4c16c9;
 height: 56px;
-width: 100vw;
+width: 100%;
 display: flex;
 align-items: center;
 padding: 0 18px;
@@ -25,6 +25,14 @@ export const Container = styled.div `
         padding-bottom: 1.5rem;
         border-bottom: 2px solid #DDE0EB;
         align-items: flex-end;
+
+        h1 {
+            font-weight: 600;
+        }
+        
+        p{
+            color: #0C1932CC;
+        }
         
         .input {
             width: 12.5rem;

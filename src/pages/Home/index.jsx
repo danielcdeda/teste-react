@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import api from '../../services/api.js'
-import { Container } from "../../components/Header/styles.js";
-import Card from "../../components/Header/Card/index.jsx";
-
+import { Container } from "../../components/Card/styles.js";
+import Card from "../../components/Card/index.jsx";
+import {ContainerItems }  from "./styles.js"
 
 function Home() {
     const [movies, setMovies] = useState()
+    const [filteredMovies, setFilteredMovies] = useState()
 
     useEffect(() => {
         async function loadData() {
@@ -14,6 +15,7 @@ function Home() {
             } = await api.get('movie')
 
             setMovies(docs)
+            setFilteredMovies(docs)
             console.log(docs)
 
         }
@@ -22,11 +24,13 @@ function Home() {
     }, [])
 
     return (
+        
        <Container>
-       
-        { movies && movies.map( movie => (
-            <Card movieData={movie} key={movie._id}/>
-        ))}
+        <ContainerItems>
+            { filteredMovies && filteredMovies.map( movie => (
+                <Card movieData={movie} key={movie._id}/>
+            ))}
+            </ContainerItems>
        </Container>
     )
 }

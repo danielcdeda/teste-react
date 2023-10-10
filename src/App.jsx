@@ -6,10 +6,11 @@ import Header from '../src/components/Header/index'
 
 
 
+
 function App() {
     return (
     <div>
-        <Header />
+        <Header/>
         <GlobalStyles />
         <Home />
     </div>
