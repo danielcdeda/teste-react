@@ -33,15 +33,33 @@ export const Container = styled.div `
         p{
             color: #0C1932CC;
         }
-        
+
+       
         .input {
-            width: 12.5rem;
+            width: 100%;
             height: 2.5rem;
             padding-left: 10px;
             border: 2px solid #D0D3E0;
             border-radius: 5px;
             color: #0C1932;
+            width: 100%
         }
         
+        @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-left: 10px;
+
+        
+        .input {
+            margin-top: 10px;
+        }
+        
+    }
+
+    
+
+   
 
 `
